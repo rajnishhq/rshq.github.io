@@ -1,177 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>rshq.cloud | Portal</title>
-    <style>
-        :root {
-            --primary: #00f3ff;
-            --secondary: #ff007f;
-            --dark: #0a0a16;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-        }
-
-        body {
-            background-color: var(--dark);
-            color: #ffffff;
-            overflow: hidden;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        /* Interactive Particle Background */
-        canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
-
-        /* Floating Clean Typography */
-        .floating-text {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            width: 90%;
-            pointer-events: none; /* Allows user to interact with stars through the text */
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-        }
-
-        h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            letter-spacing: 1px;
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 40px rgba(0, 243, 255, 0.2);
-        }
-
-        /* Responsive scaling for mobile devices */
-        @media (max-width: 600px) {
-            h1 { font-size: 2.2rem; }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="RSHQ — mindset, habit and life coaching to help you break old patterns and build better ones." />
+  <meta name="theme-color" content="#0b0d10" />
+  <title>RSHQ — Break the Pattern. Build a Better Life.</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 </head>
 <body>
-
-    <canvas id="stars"></canvas>
-
-    <div class="floating-text">
-        <h1>Welcome to Rajnish Sagar's World</h1>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top">RSHQ<span>.</span></a>
+      <nav aria-label="Main navigation">
+        <a href="#mission">Mission</a>
+        <a href="#approach">Approach</a>
+        <a href="#who">Who I Help</a>
+        <a href="#start">Start</a>
+      </nav>
+      <a class="nav-cta" href="#start">Work With Me</a>
     </div>
+  </header>
 
-    <script>
-        const canvas = document.getElementById('stars');
-        const ctx = canvas.getContext('2d');
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">MINDSET • HABITS • HUMAN BEHAVIOUR</p>
+          <h1>Break the pattern.<br /><span>Build a better life.</span></h1>
+          <p class="hero-text">
+            Many of the things holding us back are not new problems.
+            They are old patterns running automatically.
+          </p>
+          <p class="hero-text">
+            I help people understand those patterns, create practical
+            changes, and build habits that support the person they want to become.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#start">Start a Conversation</a>
+            <a class="button secondary" href="#approach">How I Work</a>
+          </div>
+        </div>
 
-        let particles = [];
-        const particleCount = 150; /* Increased stars slightly for better atmosphere */
-        let mouse = { x: null, y: null, radius: 150 };
+        <div class="hero-card">
+          <div class="quote-mark">“</div>
+          <p>
+            You don't always need a completely new life.
+            Sometimes you need a new way of thinking, responding and acting.
+          </p>
+          <div class="line"></div>
+          <small>RSHQ — Mindset & Habit Building</small>
+        </div>
+      </div>
+    </section>
 
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-        window.addEventListener('resize', resizeCanvas);
-        resizeCanvas();
+    <section id="mission" class="section">
+      <div class="container narrow">
+        <p class="eyebrow">THE MISSION</p>
+        <h2>Help 10,000 people change one pattern at a time.</h2>
+        <p class="lead">
+          My mission is simple: help people become more conscious of the habits,
+          beliefs and behavioural patterns that quietly shape their lives —
+          and help them replace what no longer serves them.
+        </p>
+        <div class="stats">
+          <div>
+            <strong>10,000</strong>
+            <span>people I aim to help</span>
+          </div>
+          <div>
+            <strong>1 pattern</strong>
+            <span>identified at a time</span>
+          </div>
+          <div>
+            <strong>1 habit</strong>
+            <span>built through action</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        window.addEventListener('mousemove', (e) => {
-            mouse.x = e.x;
-            mouse.y = e.y;
-        });
+    <section id="approach" class="section dark-section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">THE APPROACH</p>
+          <h2>Awareness → Choice → Practice → Change</h2>
+          <p>
+            Real change is rarely created by motivation alone. It comes from
+            understanding what is happening and repeatedly practising a better response.
+          </p>
+        </div>
 
-        window.addEventListener('mouseout', () => {
-            mouse.x = null;
-            mouse.y = null;
-        });
+        <div class="cards">
+          <article class="card">
+            <span class="number">01</span>
+            <h3>Understand the pattern</h3>
+            <p>
+              Identify recurring thoughts, triggers, behaviours and beliefs that
+              keep producing the same results.
+            </p>
+          </article>
+          <article class="card">
+            <span class="number">02</span>
+            <h3>Create a new response</h3>
+            <p>
+              Turn vague intentions into clear choices and small behaviours that
+              can actually be practised in everyday life.
+            </p>
+          </article>
+          <article class="card">
+            <span class="number">03</span>
+            <h3>Build the habit</h3>
+            <p>
+              Use repetition, environment, accountability and reflection to make
+              the new behaviour easier and more natural.
+            </p>
+          </article>
+          <article class="card">
+            <span class="number">04</span>
+            <h3>Review and evolve</h3>
+            <p>
+              Notice what works, learn from setbacks and keep improving without
+              expecting perfection.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-        class Particle {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 2 + 0.5;
-                this.baseX = this.x;
-                this.baseY = this.y;
-                this.density = (Math.random() * 30) + 10;
-                this.color = Math.random() > 0.5 ? '#00f3ff' : '#ff007f';
-                this.alpha = Math.random() * 0.5 + 0.2;
-            }
+    <section id="who" class="section">
+      <div class="container two-column">
+        <div>
+          <p class="eyebrow">WHO I HELP</p>
+          <h2>For people who know they want change — but keep returning to the old pattern.</h2>
+        </div>
+        <div class="check-list">
+          <div><span>✓</span> People struggling with unhelpful habits or routines</div>
+          <div><span>✓</span> People who feel stuck despite knowing what they should do</div>
+          <div><span>✓</span> People wanting more discipline, consistency and clarity</div>
+          <div><span>✓</span> People navigating a career or life transition</div>
+          <div><span>✓</span> People who want an accountability partner and practical guidance</div>
+          <div><span>✓</span> People who want to understand their own behaviour better</div>
+        </div>
+      </div>
+    </section>
 
-            draw() {
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fillStyle = this.color;
-                ctx.globalAlpha = this.alpha;
-                ctx.fill();
-            }
+    <section class="section highlight">
+      <div class="container quote-section">
+        <p class="eyebrow">A DIFFERENT WAY TO LOOK AT CHANGE</p>
+        <blockquote>
+          “Don't fight the old version of yourself all day.
+          Understand it. Then practise becoming the new one.”
+        </blockquote>
+      </div>
+    </section>
 
-            update() {
-                if (mouse.x != null && mouse.y != null) {
-                    let dx = mouse.x - this.x;
-                    let dy = mouse.y - this.y;
-                    let distance = Math.sqrt(dx * dx + dy * dy);
-                    let forceDirectionX = dx / distance;
-                    let forceDirectionY = dy / distance;
-                    let maxDistance = mouse.radius;
-                    let force = (maxDistance - distance) / maxDistance;
-                    
-                    if (distance < mouse.radius) {
-                        this.x -= forceDirectionX * force * this.density * 0.6;
-                        this.y -= forceDirectionY * force * this.density * 0.6;
-                    } else {
-                        if (this.x !== this.baseX) {
-                            let dx = this.x - this.baseX;
-                            this.x -= dx / 20;
-                        }
-                        if (this.y !== this.baseY) {
-                            let dy = this.y - this.baseY;
-                            this.y -= dy / 20;
-                        }
-                    }
-                } else {
-                    this.baseX += Math.sin(Date.now() * 0.001 + this.density) * 0.05;
-                    this.baseY += Math.cos(Date.now() * 0.001 + this.density) * 0.05;
-                    this.x = this.baseX;
-                    this.y = this.baseY;
-                }
-            }
-        }
+    <section id="start" class="section start-section">
+      <div class="container start-box">
+        <div>
+          <p class="eyebrow">READY TO START?</p>
+          <h2>Let's work on the pattern that is holding you back.</h2>
+          <p>
+            I offer one-to-one guidance focused on mindset, habits, behaviour
+            and practical personal change.
+          </p>
+          <p class="note">
+            Coaching is educational and goal-oriented. It is not a substitute
+            for medical care, psychotherapy or emergency mental-health support.
+          </p>
+        </div>
+        <div class="start-actions">
+          <!-- Replace the links below with your booking/payment pages. -->
+          <a class="button primary large" href="https://rshq.cloud" target="_blank" rel="noopener">
+            Book a Session
+          </a>
+          <a class="button secondary large" href="mailto:rajnishhq@gmail.com">
+            Contact Me
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-        function init() {
-            particles = [];
-            for (let i = 0; i < particleCount; i++) {
-                particles.push(new Particle());
-            }
-        }
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        <strong>RSHQ<span>.</span></strong>
+        <p>Mindset • Habits • Human Behaviour</p>
+      </div>
+      <div class="footer-links">
+        <a href="#mission">Mission</a>
+        <a href="#approach">Approach</a>
+        <a href="#start">Work With Me</a>
+      </div>
+      <p class="copyright">© <span id="year"></span> RSHQ. All rights reserved.</p>
+    </div>
+  </footer>
 
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            for (let i = 0; i < particles.length; i++) {
-                particles[i].update();
-                particles[i].draw();
-            }
-            requestAnimationFrame(animate);
-        }
-
-        init();
-        animate();
-    </script>
+  <script src="script.js"></script>
 </body>
 </html>
