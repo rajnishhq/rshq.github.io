@@ -1,244 +1,82 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="RSHQ — Rajnish Sagar Headquarters. Mindset and habit coaching to help people break old patterns and build better ones.">
-<meta name="theme-color" content="#f7f5ef">
-<title>RSHQ — Rajnish Sagar Headquarters | Mindset & Habit Building</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="RSHQ by Rajnish Sagar — one-to-one mindset and habit coaching for people who feel stuck in patterns they want to change.">
+<title>RSHQ — Break the Pattern. Build a Better Life.</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
-
-:root{
-  --ink:#171815;
-  --muted:#62645e;
-  --paper:#f7f5ef;
-  --cream:#eeece3;
-  --card:#ffffff;
-  --green:#163d31;
-  --lime:#d9ed75;
-  --line:#dcdad0;
-  --max:1180px;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",sans-serif;line-height:1.6}
-a{text-decoration:none;color:inherit}
-.container{width:min(calc(100% - 40px),var(--max));margin:auto}
-.header{position:sticky;top:0;z-index:50;background:rgba(247,245,239,.9);backdrop-filter:blur(16px);border-bottom:1px solid rgba(23,24,21,.08)}
-.nav{height:76px;display:flex;align-items:center;justify-content:space-between}
-.brand-lockup{display:flex;align-items:baseline;gap:12px}
-.logo{font-size:25px;font-weight:800;letter-spacing:-1.5px}
-.brand-sub{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#77786f;font-weight:700;white-space:nowrap}
-.logo i{font-style:normal;color:#718b23}
-.links{display:flex;gap:30px;font-size:14px;color:#4e504b}
-.links a:hover{color:var(--green)}
-.nav-btn{background:var(--green);color:#fff;padding:11px 18px;border-radius:100px;font-size:13px;font-weight:700}
-.hero{padding:105px 0 95px;overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:80px;align-items:center}
-.kicker{font-size:12px;letter-spacing:.18em;font-weight:800;color:#64751e;margin-bottom:20px}
-h1,h2,h3{line-height:1.08;letter-spacing:-.045em;margin:0}
-h1{font-size:clamp(52px,7vw,88px);max-width:780px}
-h1 em{font-family:"Playfair Display",serif;font-weight:600;color:var(--green);font-style:normal}
-.hero-copy>p{max-width:640px;color:var(--muted);font-size:18px;margin:28px 0 0}
-.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 21px;border-radius:9px;font-size:14px;font-weight:700}
-.btn-main{background:var(--green);color:white}
-.btn-main:hover{background:#0f3026}
-.btn-light{border:1px solid #c9c8bf;background:transparent}
-.btn-light:hover{border-color:var(--green)}
-.hero-visual{position:relative;min-height:480px}
-.visual-main{position:absolute;inset:25px 0 0 50px;border-radius:26px;background:var(--green);overflow:hidden}
-.visual-main:before{content:"";position:absolute;width:360px;height:360px;border-radius:50%;background:var(--lime);right:-120px;top:-100px;opacity:.9}
-.visual-main:after{content:"";position:absolute;width:180px;height:180px;border-radius:50%;border:1px solid rgba(255,255,255,.2);left:-60px;bottom:40px}
-.visual-content{position:absolute;left:35px;right:35px;bottom:35px;color:#fff;z-index:2}
-.visual-content .mini{font-size:11px;letter-spacing:.15em;opacity:.65}
-.visual-content h3{font-size:34px;margin-top:12px;max-width:340px}
-.visual-content p{color:rgba(255,255,255,.72);font-size:14px;max-width:330px}
-.float-card{position:absolute;z-index:3;left:0;top:0;width:230px;padding:24px;border-radius:18px;background:#fff;box-shadow:0 20px 55px rgba(30,35,28,.15)}
-.float-card .num{font-size:38px;font-weight:800;color:var(--green);letter-spacing:-2px}
-.float-card p{margin:4px 0 0;font-size:13px;color:var(--muted);line-height:1.45}
-.section{padding:105px 0}
-.mission{background:var(--cream)}
-.center{text-align:center;max-width:860px;margin:auto}
-h2{font-size:clamp(38px,5vw,62px)}
-.center p{font-size:19px;color:var(--muted);max-width:740px;margin:25px auto 0}
-.mission-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);margin-top:55px;border:1px solid var(--line)}
-.mission-item{background:var(--cream);padding:30px;text-align:left}
-.mission-item strong{font-size:38px;display:block;color:var(--green);letter-spacing:-2px}
-.mission-item span{font-size:14px;color:var(--muted)}
-.dark{background:var(--green);color:white}
-.dark .kicker{color:var(--lime)}
-.dark .section-intro{color:rgba(255,255,255,.65)}
-.section-head{display:flex;justify-content:space-between;gap:60px;align-items:end;margin-bottom:50px}
-.section-intro{max-width:450px;color:var(--muted);font-size:17px}
-.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:28px;min-height:280px}
-.card:hover{background:rgba(255,255,255,.1)}
-.card-no{color:var(--lime);font-size:12px;font-weight:800}
-.card h3{font-size:22px;margin-top:65px}
-.card p{color:rgba(255,255,255,.62);font-size:14px}
-.people-grid{display:grid;grid-template-columns:1fr 1fr;gap:90px}
-.people-grid h2{max-width:570px}
-.points{border-top:1px solid var(--line)}
-.point{display:flex;gap:18px;padding:19px 0;border-bottom:1px solid var(--line);font-size:16px}
-.point b{color:#748e22}
-.quote{padding:110px 0;background:#e2ef9a}
-.quote blockquote{max-width:1000px;margin:auto;font-family:"Playfair Display",serif;font-size:clamp(34px,5vw,64px);line-height:1.12;letter-spacing:-.035em;text-align:center;color:var(--green)}
-.quote cite{display:block;text-align:center;margin-top:28px;font-family:"DM Sans",sans-serif;font-size:12px;font-style:normal;letter-spacing:.14em;color:#4d5a23}
-.start{padding:100px 0}
-.start-box{background:#fff;border:1px solid var(--line);border-radius:24px;padding:65px;display:grid;grid-template-columns:1.2fr .8fr;gap:60px;align-items:center}
-.start-box p{color:var(--muted);font-size:17px;max-width:650px}
-.start-actions{display:grid;gap:12px}
-.note{font-size:12px!important;line-height:1.5;margin-top:25px}
-footer{border-top:1px solid var(--line);padding:35px 0}
-.footer{display:flex;justify-content:space-between;align-items:center;gap:25px}
-.footer p{margin:5px 0 0;color:var(--muted);font-size:12px}.footer-brand{align-items:baseline}
-.footer-links{display:flex;gap:22px;font-size:13px;color:var(--muted)}
-@media(max-width:900px){
- .links{display:none}.brand-sub{font-size:8px;letter-spacing:.06em}.hero-grid,.people-grid,.start-box{grid-template-columns:1fr}
- .hero{padding:75px 0}.hero-visual{min-height:420px;margin-top:20px}
- .section-head{display:block}.section-intro{margin-top:20px}.cards{grid-template-columns:1fr 1fr}
- .start-box{padding:40px}.footer{align-items:flex-start;flex-direction:column}
-}
-@media(max-width:600px){
- .container{width:min(calc(100% - 28px),var(--max))}
- .nav-btn{display:none}.brand-sub{display:none}.hero{padding:65px 0}.hero-visual{min-height:370px}
- .visual-main{inset:35px 0 0 25px}.float-card{width:190px;padding:18px}.float-card .num{font-size:30px}
- .visual-content{left:25px;bottom:25px}.visual-content h3{font-size:27px}
- .section{padding:75px 0}.mission-grid,.cards{grid-template-columns:1fr}
- .card{min-height:220px}.card h3{margin-top:45px}
- .start-box{padding:30px}.quote{padding:75px 0}
-}
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap');
+:root{--ink:#17211d;--green:#183c31;--paper:#f6f2e9;--cream:#ebe5d8;--white:#fffdf8;--muted:#65706a;--lime:#d9ed78;--line:#d8d3c8;--max:1160px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",sans-serif;line-height:1.65}a{text-decoration:none;color:inherit}.container{width:min(calc(100% - 40px),var(--max));margin:auto}
+.header{position:sticky;top:0;z-index:50;background:rgba(246,242,233,.92);backdrop-filter:blur(16px);border-bottom:1px solid #17211d14}.nav{height:78px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:baseline;gap:11px}.logo{font-size:26px;font-weight:800;letter-spacing:-1.5px}.logo i{font-style:normal;color:#738d29}.brand small{text-transform:uppercase;letter-spacing:.08em;color:#777a72;font-size:9px;font-weight:700}.links{display:flex;gap:28px;font-size:13px;color:#525c56}.links a:hover{color:var(--green)}.nav-cta{background:var(--green);color:white;padding:12px 19px;border-radius:100px;font-size:13px;font-weight:700}
+.hero{padding:100px 0 90px}.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:center}.kicker{font-size:11px;font-weight:800;letter-spacing:.18em;color:#687c25;margin-bottom:20px}h1,h2,h3{font-weight:700;line-height:1.07;letter-spacing:-.045em;margin:0}h1{font-size:clamp(50px,7vw,86px);max-width:800px}h1 em,h2 em{font-family:"DM Serif Display",serif;font-style:italic;font-weight:400;color:var(--green)}.hero-lead{font-size:20px;color:#59645e;max-width:650px;margin:29px 0 0}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:51px;padding:0 22px;border-radius:9px;font-size:14px;font-weight:700;transition:.2s}.btn-main{background:var(--green);color:white}.btn-main:hover{background:#102f26;transform:translateY(-2px)}.btn-outline{border:1px solid #bfc0b7;background:transparent}.btn-outline:hover{border-color:var(--green);transform:translateY(-2px)}.micro{font-size:11px;color:#7a807a;margin-top:14px}
+.hero-art{position:relative;min-height:510px}.art-card{position:absolute;inset:30px 0 0 55px;background:var(--green);border-radius:26px;overflow:hidden}.art-card:before{content:"";position:absolute;width:380px;height:380px;border-radius:50%;right:-130px;top:-120px;background:var(--lime)}.art-card:after{content:"";position:absolute;width:230px;height:230px;border-radius:50%;left:-100px;bottom:-90px;border:1px solid #ffffff33}.art-copy{position:absolute;left:38px;bottom:37px;color:white;z-index:2;max-width:370px}.art-copy small{font-size:10px;letter-spacing:.16em;opacity:.65}.art-copy h3{font-size:34px;margin:12px 0}.art-copy p{font-size:14px;color:#ffffffad}.art-float{position:absolute;left:0;top:0;width:245px;padding:25px;background:var(--white);border-radius:18px;z-index:3;box-shadow:0 24px 65px #1a261f29}.art-float strong{font-size:42px;letter-spacing:-2px;color:var(--green)}.art-float p{font-size:13px;color:var(--muted);margin:2px 0;line-height:1.45}
+.section{padding:105px 0}.story{background:var(--cream)}.story-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:90px}.story h2{font-size:clamp(40px,5vw,62px)}.story-copy p{font-size:18px;color:#59635e;margin:0 0 20px}.highlight{font-weight:700;color:var(--green)!important;font-size:21px!important}
+.problem{background:var(--green);color:white}.problem .kicker{color:var(--lime)}.problem-intro{max-width:770px}.problem h2{font-size:clamp(42px,5vw,65px)}.problem h2 em{color:var(--lime)}.problems{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:52px}.problem-card{padding:28px;border:1px solid #ffffff21;background:#ffffff0b;border-radius:15px}.problem-card span{font-size:12px;color:var(--lime);font-weight:800}.problem-card h3{font-size:21px;margin:42px 0 11px}.problem-card p{font-size:14px;color:#ffffff9e;margin:0}
+.method-head{display:flex;justify-content:space-between;gap:60px;align-items:end}.method-head h2{font-size:clamp(40px,5vw,62px);max-width:700px}.method-head>p{max-width:400px;color:var(--muted)}.steps{display:grid;grid-template-columns:repeat(4,1fr);margin-top:55px;border-top:1px solid var(--line)}.step{padding:28px 22px 25px;border-right:1px solid var(--line)}.step:last-child{border-right:0}.step b{font-size:11px;color:#6f8428}.step h3{font-size:20px;margin:38px 0 10px}.step p{font-size:14px;color:var(--muted);margin:0}
+.you{background:#e4eea0}.you-grid{display:grid;grid-template-columns:1fr 1fr;gap:90px}.you h2{font-size:clamp(40px,5vw,62px)}.list{border-top:1px solid #17211d38}.item{display:flex;gap:18px;padding:18px 0;border-bottom:1px solid #17211d38;font-size:15px}.item b{color:#50651a}
+.quote{padding:110px 0;background:var(--white)}blockquote{max-width:920px;margin:auto;text-align:center;font-family:"DM Serif Display",serif;font-size:clamp(36px,5.5vw,68px);line-height:1.1;letter-spacing:-.035em;font-weight:400;color:var(--green)}.quote p{text-align:center;color:var(--muted);font-size:13px;margin-top:28px}
+.booking{padding:105px 0}.booking-box{background:var(--green);color:white;border-radius:25px;padding:65px;display:grid;grid-template-columns:1.25fr .75fr;gap:60px;align-items:center}.booking-box h2{font-size:clamp(40px,5vw,60px)}.booking-box h2 em{color:var(--lime)}.booking-box>div>p{color:#ffffffad;font-size:17px;max-width:620px;margin-top:24px}.booking-actions{display:grid;gap:12px}.booking-actions .btn-main{background:var(--lime);color:var(--ink)}.booking-actions .btn-outline{border-color:#ffffff4d;color:white}.disclaimer{font-size:11px!important;line-height:1.5!important;margin-top:25px!important;color:#ffffff73!important}
+footer{border-top:1px solid var(--line);padding:35px 0}.footer{display:flex;justify-content:space-between;gap:25px;align-items:center}.footer p{font-size:12px;color:var(--muted);margin:0}
+@media(max-width:900px){.links{display:none}.hero-grid,.story-grid,.you-grid,.booking-box{grid-template-columns:1fr}.hero-art{min-height:420px;margin-top:20px}.problems{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}.step:nth-child(2){border-right:0}.step{border-bottom:1px solid var(--line)}.story-grid,.you-grid{gap:45px}.booking-box{padding:42px}}
+@media(max-width:600px){.container{width:min(calc(100% - 28px),var(--max))}.brand small{display:none}.nav-cta{display:none}.hero{padding:65px 0}h1{font-size:49px}.hero-lead{font-size:17px}.hero-art{min-height:365px}.art-card{inset:30px 0 0 25px}.art-float{width:190px;padding:18px}.art-float strong{font-size:32px}.art-copy{left:25px;bottom:25px}.art-copy h3{font-size:27px}.section{padding:75px 0}.problems,.steps{grid-template-columns:1fr}.step{border-right:0}.problem-card{min-height:200px}.booking-box{padding:30px}.footer{align-items:flex-start;flex-direction:column}}
 </style>
 </head>
 <body>
-<header class="header">
-  <div class="container nav">
-    <a class="brand-lockup" href="#top">
-      <span class="logo">RSHQ<i>.</i></span>
-      <span class="brand-sub">Rajnish Sagar Headquarters</span>
-    </a>
-    <nav class="links">
-      <a href="#mission">Mission</a>
-      <a href="#approach">Approach</a>
-      <a href="#who">Who I Help</a>
-      <a href="#start">Start</a>
-    </nav>
-    <a class="nav-btn" href="#start">Work With Me →</a>
-  </div>
-</header>
+<header class="header"><div class="container nav">
+<a class="brand" href="#top"><span class="logo">RSHQ<i>.</i></span><small>Rajnish Sagar Headquarters</small></a>
+<nav class="links"><a href="#why">Why</a><a href="#approach">Approach</a><a href="#who">Who I Help</a><a href="#about">About</a></nav>
+<a class="nav-cta" href="#book">Book a 1:1 →</a>
+</div></header>
 
 <main id="top">
-<section class="hero">
-  <div class="container hero-grid">
-    <div class="hero-copy">
-      <div class="kicker">MINDSET • HABITS • HUMAN BEHAVIOUR</div>
-      <h1>Break the pattern.<br><em>Build a better life.</em></h1>
-      <p>We often know what we want to change — yet somehow return to the same thoughts, behaviours and habits.</p>
-      <p>I help people understand those patterns and consciously build better ones through practical guidance, reflection and consistent action.</p>
-      <div class="actions">
-        <a class="btn btn-main" href="#start">Start a Conversation →</a>
-        <a class="btn btn-light" href="#approach">See My Approach</a>
-      </div>
-    </div>
-    <div class="hero-visual">
-      <div class="float-card">
-        <div class="num">10,000</div>
-        <p>people I want to help create meaningful change in their lives.</p>
-      </div>
-      <div class="visual-main">
-        <div class="visual-content">
-          <div class="mini">RAJNISH SAGAR HEADQUARTERS</div>
-          <h3>Change becomes possible when we become conscious of the pattern.</h3>
-          <p>Understand it. Interrupt it. Practise something better. Repeat.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<section class="hero"><div class="container hero-grid"><div>
+<div class="kicker">MINDSET • HABITS • HUMAN BEHAVIOUR</div>
+<h1>You know what to do.<br><em>So why do you keep going back?</em></h1>
+<p class="hero-lead">You decide to change. You stay motivated for a while. Then the same thought, trigger or behaviour pulls you back into the old routine.</p>
+<p class="hero-lead">There is a reason that happens. And once you understand the pattern, you can start changing it.</p>
+<div class="actions"><a class="btn btn-main" href="#book">Book a 1:1 Session →</a><a class="btn btn-outline" href="#why">This sounds like me</a></div>
+<div class="micro">Online • One-to-one • Practical • Confidential</div>
+</div>
+<div class="hero-art"><div class="art-float"><strong>10,000</strong><p>My long-term mission: help 10,000 people create meaningful change in their lives.</p></div><div class="art-card"><div class="art-copy"><small>THE RSHQ APPROACH</small><h3>Don't just fight the habit. Understand the system behind it.</h3><p>Awareness creates choice. Repetition creates change.</p></div></div></div>
+</div></section>
 
-<section id="mission" class="section mission">
-  <div class="container center">
-    <div class="kicker">THE MISSION</div>
-    <h2>Help 10,000 people change one pattern at a time.</h2>
-    <p>My mission is to help people become more conscious of the beliefs, habits and behavioural patterns quietly shaping their lives — and give them practical ways to change.</p>
-    <div class="mission-grid">
-      <div class="mission-item"><strong>10,000</strong><span>people I aim to help</span></div>
-      <div class="mission-item"><strong>1 pattern</strong><span>understood at a time</span></div>
-      <div class="mission-item"><strong>1 habit</strong><span>built through action</span></div>
-    </div>
-  </div>
-</section>
+<section id="why" class="section story"><div class="container story-grid"><div><div class="kicker">MAYBE THIS IS YOU</div><h2>You are not <em>lazy.</em><br>You may be running an old pattern.</h2></div><div class="story-copy">
+<p>You have probably told yourself things like:</p>
+<p>“From tomorrow, I'll be disciplined.”<br>“I know what I need to do.”<br>“Why do I keep doing this?”<br>“I start strongly, but I can't stay consistent.”</p>
+<p class="highlight">The frustrating part is that knowing is not the same as changing.</p>
+<p>Our behaviour is shaped by triggers, beliefs, emotional associations, environment and repetition. If those mechanisms remain unchanged, willpower eventually gets tired.</p>
+<p>One-to-one coaching gives you a space to slow down, understand what is happening and turn insight into practical action.</p>
+</div></div></section>
 
-<section id="approach" class="section dark">
-  <div class="container">
-    <div class="section-head">
-      <div><div class="kicker">THE APPROACH</div><h2>Awareness → Choice → Practice → Change</h2></div>
-      <p class="section-intro">Motivation is useful, but lasting change needs awareness and repetition. We turn an intention into something you can actually practise.</p>
-    </div>
-    <div class="cards">
-      <article class="card"><div class="card-no">01 — AWARENESS</div><h3>Understand the pattern</h3><p>Notice triggers, thoughts, beliefs and behaviours that repeatedly produce the same result.</p></article>
-      <article class="card"><div class="card-no">02 — CHOICE</div><h3>Create a new response</h3><p>Decide what you want to do differently and make the new behaviour specific.</p></article>
-      <article class="card"><div class="card-no">03 — PRACTICE</div><h3>Build the habit</h3><p>Use small actions, environment and repetition to make the new response easier.</p></article>
-      <article class="card"><div class="card-no">04 — CHANGE</div><h3>Review & evolve</h3><p>Learn from setbacks, adjust the system and keep moving without demanding perfection.</p></article>
-    </div>
-  </div>
-</section>
+<section class="section problem" id="who"><div class="container"><div class="kicker">THE PROBLEMS WE WORK ON</div><div class="problem-intro"><h2>What keeps repeating in your life that you <em>don't want to repeat?</em></h2></div>
+<div class="problems">
+<article class="problem-card"><span>01 — HABITS</span><h3>“I know it's bad for me. I still do it.”</h3><p>Understand triggers and design a practical interruption instead of relying only on willpower.</p></article>
+<article class="problem-card"><span>02 — DISCIPLINE</span><h3>“I start. Then I lose momentum.”</h3><p>Build systems that make consistency easier and reduce dependence on motivation.</p></article>
+<article class="problem-card"><span>03 — OVERTHINKING</span><h3>“My mind keeps going in circles.”</h3><p>Notice repetitive thought loops and move from rumination toward deliberate action.</p></article>
+<article class="problem-card"><span>04 — SELF-SABOTAGE</span><h3>“Why do I get in my own way?”</h3><p>Explore beliefs and patterns that may be quietly conflicting with your goals.</p></article>
+<article class="problem-card"><span>05 — DIRECTION</span><h3>“I want change, but I don't know where to begin.”</h3><p>Turn a vague desire for change into a clear next step and practical experiment.</p></article>
+<article class="problem-card"><span>06 — IDENTITY</span><h3>“I want to become a different version of myself.”</h3><p>Translate the person you want to become into behaviours you can practise today.</p></article>
+</div></div></section>
 
-<section id="who" class="section">
-  <div class="container people-grid">
-    <div>
-      <div class="kicker">WHO I HELP</div>
-      <h2>For people who know they want change — but keep returning to the old pattern.</h2>
-    </div>
-    <div class="points">
-      <div class="point"><b>01</b><span>Unhelpful habits or routines that keep repeating</span></div>
-      <div class="point"><b>02</b><span>Feeling stuck even when you know what you should do</span></div>
-      <div class="point"><b>03</b><span>Wanting more discipline, consistency and clarity</span></div>
-      <div class="point"><b>04</b><span>Career or life transitions that need a fresh perspective</span></div>
-      <div class="point"><b>05</b><span>Need for accountability and practical guidance</span></div>
-      <div class="point"><b>06</b><span>Curiosity about your own behaviour and thinking</span></div>
-    </div>
-  </div>
-</section>
+<section id="approach" class="section"><div class="container"><div class="method-head"><div><div class="kicker">THE RSHQ METHOD</div><h2>Insight is the beginning.<br><em>Practice creates change.</em></h2></div><p>Sessions focus on understanding the pattern and designing small, realistic actions you can carry into your actual life.</p></div>
+<div class="steps"><div class="step"><b>01 — NOTICE</b><h3>See the loop</h3><p>What happens before, during and after the behaviour?</p></div><div class="step"><b>02 — UNDERSTAND</b><h3>Find the mechanism</h3><p>Explore triggers, beliefs, emotions and environment.</p></div><div class="step"><b>03 — REPLACE</b><h3>Choose a response</h3><p>Create a specific behaviour that serves your goal better.</p></div><div class="step"><b>04 — REPEAT</b><h3>Make it normal</h3><p>Practise, review, adjust and repeat until it becomes easier.</p></div></div></div></section>
 
-<section class="quote">
-  <div class="container">
-    <blockquote>“Don't spend your whole life fighting the old version of yourself. Understand it. Then practise becoming the new one.”</blockquote>
-    <cite>RSHQ — MINDSET & HABIT BUILDING</cite>
-  </div>
-</section>
+<section class="section you"><div class="container you-grid"><div><div class="kicker">THIS MAY BE FOR YOU</div><h2>If you are ready to stop <em>thinking about change</em> and start practising it.</h2></div><div class="list">
+<div class="item"><b>✓</b><span>You want an outside perspective without judgement.</span></div><div class="item"><b>✓</b><span>You are willing to be honest about the patterns you want to change.</span></div><div class="item"><b>✓</b><span>You prefer practical steps over generic motivation.</span></div><div class="item"><b>✓</b><span>You understand that lasting change takes repetition.</span></div><div class="item"><b>✓</b><span>You are ready to take responsibility for the next step.</span></div>
+</div></div></section>
 
-<section id="start" class="start">
-  <div class="container start-box">
-    <div>
-      <div class="kicker">READY TO START?</div>
-      <h2>Let's work on the pattern that is holding you back.</h2>
-      <p>One-to-one guidance focused on mindset, habits, behaviour and practical personal change.</p>
-      <p class="note">Coaching is educational and goal-oriented. It is not a substitute for medical care, psychotherapy or emergency mental-health support.</p>
-    </div>
-    <div class="start-actions">
-      <!-- Replace these two links with your real booking and email links. -->
-      <!--
-	<a class="btn btn-main" href="https://YOUR-BOOKING-LINK.example" target="_blank" rel="noopener">Book a Session →</a>
-	-->
-      <a class="btn btn-light" href="rajnishhq@gmail.com">Contact Me</a>
-    </div>
-  </div>
-</section>
+<section id="about" class="section quote"><div class="container"><blockquote>“You don't need to become a completely different person overnight. You need to start giving your brain evidence that a different way of living is possible.”</blockquote><p>RSHQ — Rajnish Sagar Headquarters</p></div></section>
+
+<section id="book" class="booking"><div class="container booking-box"><div><div class="kicker">TAKE THE FIRST STEP</div><h2>Maybe you don't need more advice.<br><em>Maybe you need a conversation.</em></h2><p>Bring one problem, one habit or one pattern that you want to understand better. We will start there.</p><p class="disclaimer">Coaching is educational and goal-oriented. It is not psychotherapy, psychiatric treatment or a substitute for professional medical or mental-health care. If you are experiencing a mental-health crisis, seek appropriate professional support.</p></div><div class="booking-actions">
+<!-- Replace with your real booking link. -->
+<!--<a class="btn btn-main" href="https://YOUR-BOOKING-LINK.example" target="_blank" rel="noopener">Book Your 1:1 Session →</a>-->
+<a class="btn btn-outline" href="mailto:rajnishhq@gmail.com">Ask a Question First</a>
+</div></div></section>
 </main>
 
-<footer>
-  <div class="container footer">
-    <div><a class="brand-lockup" href="#top">
-      <span class="logo">RSHQ<i>.</i></span>
-      <span class="brand-sub">Rajnish Sagar Headquarters</span>
-    </a><p>Mindset • Habits • Human Behaviour</p></div>
-    <div class="footer-links"><a href="#mission">Mission</a><a href="#approach">Approach</a><a href="#start">Work With Me</a></div>
-    <p>© <span id="year"></span> RSHQ · Rajnish Sagar Headquarters</p>
-  </div>
-</footer>
-<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+<footer><div class="container footer"><div><a class="brand" href="#top"><span class="logo">RSHQ<i>.</i></span><small>Rajnish Sagar Headquarters</small></a><p>Mindset • Habits • Human Behaviour</p></div><p>© <span id="year"></span> RSHQ. All rights reserved.</p></div></footer>
+<script>document.getElementById("year").textContent=new Date().getFullYear();</script>
 </body>
 </html>
